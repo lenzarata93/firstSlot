@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+    padding: 20px;
+}
+#gameSlot {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+#gameSlot #reel {
+    margin-right: 0px;
+}
+#gameSlot div {
+    width:20%; 
+    height:100%;
+    overflow: hidden; 
+    border: 2px solid blue; 
+    margin-right: 1px; 
+}
+
+#gameSlot img {
+    display: block;
+    width: 100%; /* Запълва 100% от широчината на рилата */
+    height: 150px;
+}
