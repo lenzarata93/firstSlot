@@ -4,10 +4,14 @@
     box-sizing: border-box;
 }
 body {
+    background-image: url('https://wp.gerena.bg/wp-content/uploads/2021/01/background-gerena.jpg');
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     text-align: center;
     padding: 20px;
+}
+h1{
+    color: aqua;
 }
 #gameSlot {
     display: flex;
@@ -29,4 +33,23 @@ body {
     display: block;
     width: 100%; /* Запълва 100% от широчината на рилата */
     height: 150px;
+}
+/* Стилове за бутоните */
+#action button {
+    background-color: blue; /* Зелен цвят на фона */
+    border: none; /* Без граница */
+    color: white; /* Бял цвят на текста */
+    padding: 15px 32px; /* Подравняване на вътрешните отстъпи */
+    text-align: center; /* Центриран текст */
+    text-decoration: none; /* Без декорация на текста */
+    display: inline-block; /* Показване на като блок */
+    font-size: 16px; /* Размер на шрифта */
+    margin: 4px 2px; /* Външни отстъпи */
+    cursor: pointer; /* Курсор при навлизане на бутона */
+    border-radius: 8px; /* Закръглени ръбове */
+}
+
+/* Стилове за бутоните при навлизане на курсора */
+#action button:hover {
+    background-color: aqua /* По-тъмно зелен цвят на фона */
 }

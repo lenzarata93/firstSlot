@@ -3,7 +3,6 @@ function getImg(){
         "./public/images/WELTON PUBLIC.jpg",
        "./public/images/CUNAMI.webp",
     "./public/images/100 godini.jpg",
-    "./public/images/CSKA LEVSKI 0 5.jpeg",
     "./public/images/CSKA LEVSKI 2 7.jpg",
     "./public/images/EL JEMILI.webp",
     "./public/images/GUNDI.png",
@@ -11,6 +10,7 @@ function getImg(){
     "./public/images/Ricardinho.jpg",
     "./public/images/LEVSKI NA LEVSKARITE.jpg",
     "./public/images/LEVSKI LOGO.png",
+    "./public/images/LEVSKI FANS WILD.jpg"
     
     ];
     const randomIndex = getRandomIndex(images.length);
@@ -22,20 +22,24 @@ function getRandomIndex(max) {
     return Math.floor(Math.random() * max);
 }
 
-// Функция, която завърта всеки рил
-function spinReel(reel) {
+function spinReel(reel, iterationsLeft) {
     const images = reel.querySelectorAll('img');
     images.forEach(img => {
         const src = getImg(); // Взема произволно изображение от списъка
         img.src = src;
     });
+
+    if (iterationsLeft > 0) {
+        setTimeout(() => {
+            spinReel(reel, iterationsLeft - 1);
+        }, 80); // Изчаква 100 милисекунди преди да продължи към следващата итерация (може да промените това според вашите предпочитания)
+    }
 }
 
-// Функция, която завърта всички рилове
 function spinAllReels() {
     const reels = document.querySelectorAll('#gameSlot div');
     reels.forEach(reel => {
-        spinReel(reel);
+        spinReel(reel, 15); // Завърта всеки рил 10 пъти
     });
 }
 
