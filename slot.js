@@ -24,22 +24,33 @@ function getRandomIndex(max) {
 
 function spinReel(reel, iterationsLeft) {
     const images = reel.querySelectorAll('img');
+    const targetImage = "./public/images/LEVSKI FANS WILD.jpg"; // Изображение, за което търсим съвпадение
+
     images.forEach(img => {
         const src = getImg(); // Взема произволно изображение от списъка
         img.src = src;
     });
 
+    // Проверка за съвпадение с целевото изображение
     if (iterationsLeft > 0) {
         setTimeout(() => {
+            // Проверка за съвпадение на всяко изображение в рила
+            images.forEach(img => {
+                if (img.src === targetImage) {
+                    // Ако има съвпадение, направете необходимите действия тук
+                    console.log('Съвпадение!');
+                }
+            });
+
             spinReel(reel, iterationsLeft - 1);
-        }, 80); // Изчаква 100 милисекунди преди да продължи към следващата итерация (може да промените това според вашите предпочитания)
+        }, 100); // Изчаква 100 милисекунди преди да продължи към следващата итерация (може да промените това според вашите предпочитания)
     }
 }
 
 function spinAllReels() {
     const reels = document.querySelectorAll('#gameSlot div');
     reels.forEach(reel => {
-        spinReel(reel, 15); // Завърта всеки рил 10 пъти
+        spinReel(reel, 25); // Завърта всеки рил 10 пъти
     });
 }
 
